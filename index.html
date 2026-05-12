@@ -18,7 +18,6 @@
       line-height: 1.6;
     }
 
-    /* ── HEADER ── */
     header {
       text-align: center;
       padding-bottom: 1.5rem;
@@ -30,29 +29,17 @@
     header .contact { font-size: 0.78rem; color: #555; }
     header .contact a { color: #00e; }
 
-    /* ── INTRO ── */
-    #intro {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #ccc;
-      font-size: 0.84rem;
-      color: #222;
-      line-height: 1.75;
-    }
-
-    /* ── SECTION HEADING ── */
     .section-title {
       font-size: 0.82rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       margin-top: 2rem;
       border-bottom: 1px solid #000;
       padding-bottom: 0.3rem;
     }
 
-    /* ── PROJECT ITEM ── */
     .project { border-bottom: 1px solid #ddd; }
 
     .project-toggle {
@@ -63,10 +50,11 @@
       text-align: left;
       padding: 0.7rem 0;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 0.15rem 1rem;
+      align-items: start;
     }
     .project-toggle:hover .proj-title { text-decoration: underline; }
 
@@ -74,13 +62,24 @@
       font-size: 0.88rem;
       color: #00e;
       font-weight: bold;
+      grid-column: 1;
+      grid-row: 1;
     }
     .proj-meta {
       font-size: 0.75rem;
       color: #666;
       font-style: italic;
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .proj-date {
+      font-size: 0.75rem;
+      color: #888;
+      font-style: italic;
       white-space: nowrap;
-      flex-shrink: 0;
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
     }
 
     .project-body {
@@ -114,7 +113,6 @@
       color: #aaa;
     }
 
-    /* ── FOOTER ── */
     footer {
       margin-top: 3rem;
       padding-top: 1rem;
@@ -130,37 +128,29 @@
 
   <header>
     <h1>Haseeb Mir</h1>
-    <p class="sub">Power Electronics &nbsp;·&nbsp; Embedded Firmware &nbsp;·&nbsp; FPGA &nbsp;·&nbsp; EV &amp; Grid Systems</p>
+    <p class="sub">Power Electronics &nbsp;·&nbsp; Embedded Firmware &nbsp;·&nbsp; FPGA</p>
     <p class="contact">
-      BTM Layout, Bangalore &nbsp;·&nbsp;
       <a href="mailto:haseeb.mirie@gmail.com">haseeb.mirie@gmail.com</a> &nbsp;·&nbsp;
       +91-7006760035
     </p>
   </header>
 
-  <section id="intro">
-    Senior Research Associate at the Sustainable Power Electronics Lab (SPEL), IISc Bangalore.
-    I work on power converter hardware, embedded firmware, and FPGA-based control systems for
-    grid-connected and EV charging applications. My background spans the full development cycle —
-    from magnetic design and PCB layout to closed-loop controller implementation and real-time
-    firmware on TI C2000 DSPs and Zynq platforms.
-  </section>
-
-  <!-- ── PROFESSIONALLY FUNDED PROJECTS ── -->
   <p class="section-title">Professionally Funded Projects</p>
 
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">3.3 kW SiC On-Board AC-DC Charger</span>
-      <span class="proj-meta">ChargeWorks · IISc Bangalore</span>
+      <span class="proj-date">Mar 2024 – Mar 2026</span>
+      <span class="proj-meta">ChargeWorks · IISc Bangalore &nbsp;|&nbsp; Senior Hardware &amp; Embedded Engineer</span>
     </button>
     <div class="project-body">
-      <p class="tagline">Totem-Pole PFC + LLC resonant converter for EV on-board charging. Senior Hardware &amp; Embedded Engineer.</p>
+      <p class="tagline">Totem-Pole PFC + LLC resonant converter for EV on-board charging using SiC devices. Full hardware and firmware stack designed, built, and validated on hardware.</p>
       <ul>
         <li>Led hardware development of a 3.3 kW EV charger based on Totem-Pole PFC and LLC resonant converter stages using SiC devices.</li>
-        <li>Designed a custom control card hosting the TI F28379D DSP with integrated analog/digital protection circuitry, auxiliary supply, gate-drive circuits, and power supply rails.</li>
-        <li>Implemented overvoltage and overcurrent protection systems for safe charger operation.</li>
-        <li>Developed embedded firmware for PWM generation, sensing, closed-loop control, and fault handling on TI F28379D.</li>
+        <li>Designed the full control card from scratch — hosting the TI F28379D DSP with analog and digital protection circuitry, auxiliary power supply, gate-drive circuits, voltage and current sensing, isolated ADC front-ends, and all power supply rails on a single board.</li>
+        <li>Wrote full-stack embedded firmware on the TI F28379D — covering PWM generation, ADC sensing, closed-loop PFC and LLC control, fault detection and handling, and system state management. All validated on physical hardware.</li>
+        <li>Implemented CAN communication for interfacing with the Battery Management System (BMS) — CC/CV charge profile negotiation and real-time status reporting.</li>
+        <li>Implemented analog and digital overvoltage and overcurrent protection for safe operation across all operating conditions.</li>
         <li>Performed converter modelling, controller tuning, and experimental validation using MATLAB and hardware measurements.</li>
       </ul>
       <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
@@ -170,13 +160,14 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">Digital Substation Merging Unit</span>
+      <span class="proj-date">Mar 2024 – Mar 2026</span>
       <span class="proj-meta">PGCIL · IISc Bangalore &nbsp;|&nbsp; Team Lead</span>
     </button>
     <div class="project-body">
       <p class="tagline">IEC-61850-9-2 compliant merging unit for real-time digitised current and voltage acquisition at substation bay level.</p>
       <ul>
         <li>Designed voltage and current sensing hardware using 16-bit ADCs; implemented FPGA-based PS-PL synchronisation on Zynq-7020 for deterministic real-time acquisition.</li>
-        <li>Developed a distributed timing architecture using BeagleBone Black (Embedded Linux) and FPGA with IEEE-1588 PTP and external hardware timestamping — achieving sub-nanosecond synchronisation accuracy.</li>
+        <li>Developed a distributed timing architecture using BeagleBone Black and FPGA with IEEE-1588 PTP and external hardware timestamping — achieving sub-nanosecond synchronisation accuracy.</li>
         <li>Implemented high-speed Ethernet communication using lwIP for 4 kHz real-time IEC-61850-9-2 Sampled Value streaming.</li>
         <li>Built a DMA-based acquisition, validation, and packetisation pipeline; verified frames and timing using Wireshark and MATLAB.</li>
         <li>Implemented AES-128 hardware encryption on Zynq-7020 FPGA for securing IEC-61850-9-2 Sampled Value frames over Ethernet.</li>
@@ -189,12 +180,13 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">1600 W Single-Phase Solar Micro-Inverter</span>
-      <span class="proj-meta">Arka Energy Pvt. Ltd. · Bangalore</span>
+      <span class="proj-date">Jan 2023 – Aug 2023</span>
+      <span class="proj-meta">Arka Energy Pvt. Ltd. · Bangalore &nbsp;|&nbsp; R&amp;D Engineer</span>
     </button>
     <div class="project-body">
-      <p class="tagline">Grid-connected micro-inverter for rooftop PV, developed as part of M.Tech thesis. R&amp;D Engineer.</p>
+      <p class="tagline">Grid-connected micro-inverter for rooftop PV, developed as part of M.Tech thesis.</p>
       <ul>
-        <li>Designed and developed a 1600 W single-phase solar micro-inverter including the DC-DC conversion stage and grid-connected inverter, validated against a Digital Twin developed for the same.</li>
+        <li>Designed and developed a 1600 W single-phase solar micro-inverter including DC-DC conversion stage and grid-connected inverter, validated against a Digital Twin developed for the same.</li>
         <li>Designed and implemented an interleaved 400 W quasi-resonant flyback converter with MPPT control for high-efficiency PV power extraction.</li>
         <li>Developed grid synchronisation, current control, and inverter integration algorithms for single-phase grid-tied power injection.</li>
         <li>Performed MATLAB/Simulink modelling, switching-loss analysis, and closed-loop controller design using root-locus and frequency-response methods.</li>
@@ -206,28 +198,14 @@
     </div>
   </div>
 
-  <div class="project">
-    <button class="project-toggle" onclick="toggle(this)">
-      <span class="proj-title">Control Card — Sensing, Protection &amp; Signal Conditioning</span>
-      <span class="proj-meta">SPEL · IISc Bangalore</span>
-    </button>
-    <div class="project-body">
-      <p class="tagline">Centralised control card hosting TI F28379D DSP with all sensing, protection, and drive circuitry on a single board.</p>
-      <ul>
-        <li>Designed a custom control card hosting the TI F28379D DSP with analog and digital protection circuitry, auxiliary supply, gate-drive circuits, and power supply rails.</li>
-        <li>Integrated voltage and current sensing, isolated ADC front-ends, PWM output drivers, and protection logic as a common control platform reusable across multiple converter projects.</li>
-        <li>Implemented overvoltage, overcurrent, and fault-handling circuitry for safe operation in high-power environments.</li>
-      </ul>
-      <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
-    </div>
-  </div>
 
-  <!-- ── PERSONAL PROJECTS ── -->
+
   <p class="section-title">Personal Projects</p>
 
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">Model-Predictive Control of Buck Converter</span>
+      <span class="proj-date">2024</span>
       <span class="proj-meta">IISc Bangalore</span>
     </button>
     <div class="project-body">
@@ -241,6 +219,7 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">Mathematical &amp; Magnetic Modelling of Electric Motor Drives</span>
+      <span class="proj-date">2024</span>
       <span class="proj-meta">IISc Bangalore</span>
     </button>
     <div class="project-body">
@@ -254,6 +233,7 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">PMSM Motor HIL Control</span>
+      <span class="proj-date">2025</span>
       <span class="proj-meta">IISc Bangalore</span>
     </button>
     <div class="project-body">
@@ -267,6 +247,7 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">Digital Twin Validation — DAB &amp; SRC Converters</span>
+      <span class="proj-date">2025</span>
       <span class="proj-meta">IISc Bangalore</span>
     </button>
     <div class="project-body">
@@ -280,6 +261,7 @@
   <div class="project">
     <button class="project-toggle" onclick="toggle(this)">
       <span class="proj-title">High-Frequency Trading Platform on FPGA</span>
+      <span class="proj-date">2021 – 2022</span>
       <span class="proj-meta">NIT Srinagar</span>
     </button>
     <div class="project-body">
@@ -293,7 +275,7 @@
   <footer>
     <a href="mailto:haseeb.mirie@gmail.com">Email</a>
     <a href="https://linkedin.com/in/haseebmir" target="_blank">LinkedIn</a>
-    <a href="https://github.com/haseebmir" target="_blank">GitHub</a>
+    <a href="https://github.com/haseeb-mirie" target="_blank">GitHub</a>
   </footer>
 
   <script>
