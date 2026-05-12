@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haseeb Mir</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #000;
+    }
+    header h1 { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem; }
+    header .sub { font-size: 0.82rem; color: #444; margin-bottom: 0.5rem; }
+    header .contact { font-size: 0.78rem; color: #555; }
+    header .contact a { color: #00e; }
+
+    /* ── INTRO ── */
+    #intro {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.84rem;
+      color: #222;
+      line-height: 1.75;
+    }
+
+    /* ── SECTION HEADING ── */
+    .section-title {
+      font-size: 0.82rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.3rem;
+    }
+
+    /* ── PROJECT ITEM ── */
+    .project { border-bottom: 1px solid #ddd; }
+
+    .project-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      padding: 0.7rem 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .project-toggle:hover .proj-title { text-decoration: underline; }
+
+    .proj-title {
+      font-size: 0.88rem;
+      color: #00e;
+      font-weight: bold;
+    }
+    .proj-meta {
+      font-size: 0.75rem;
+      color: #666;
+      font-style: italic;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-body {
+      display: none;
+      padding: 0.25rem 0 1.25rem 0;
+      font-size: 0.82rem;
+      color: #222;
+      line-height: 1.8;
+    }
+    .project-body.open { display: block; }
+
+    .project-body .tagline {
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    .project-body ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+    .project-body ul li { margin-bottom: 0.3rem; }
+
+    .project-body .img-placeholder {
+      margin-top: 1rem;
+      border: 1px dashed #bbb;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #000;
+      font-size: 0.78rem;
+      text-align: center;
+      color: #555;
+    }
+    footer a { color: #00e; margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Haseeb Mir</h1>
+    <p class="sub">Power Electronics &nbsp;·&nbsp; Embedded Firmware &nbsp;·&nbsp; FPGA &nbsp;·&nbsp; EV &amp; Grid Systems</p>
+    <p class="contact">
+      BTM Layout, Bangalore &nbsp;·&nbsp;
+      <a href="mailto:haseeb.mirie@gmail.com">haseeb.mirie@gmail.com</a> &nbsp;·&nbsp;
+      +91-7006760035
+    </p>
+  </header>
+
+  <section id="intro">
+    Senior Research Associate at the Sustainable Power Electronics Lab (SPEL), IISc Bangalore.
+    I work on power converter hardware, embedded firmware, and FPGA-based control systems for
+    grid-connected and EV charging applications. My background spans the full development cycle —
+    from magnetic design and PCB layout to closed-loop controller implementation and real-time
+    firmware on TI C2000 DSPs and Zynq platforms.
+  </section>
+
+  <!-- ── PROFESSIONALLY FUNDED PROJECTS ── -->
+  <p class="section-title">Professionally Funded Projects</p>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">3.3 kW SiC On-Board AC-DC Charger</span>
+      <span class="proj-meta">ChargeWorks · IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      <p class="tagline">Totem-Pole PFC + LLC resonant converter for EV on-board charging. Senior Hardware &amp; Embedded Engineer.</p>
+      <ul>
+        <li>Led hardware development of a 3.3 kW EV charger based on Totem-Pole PFC and LLC resonant converter stages using SiC devices.</li>
+        <li>Designed a custom control card hosting the TI F28379D DSP with integrated analog/digital protection circuitry, auxiliary supply, gate-drive circuits, and power supply rails.</li>
+        <li>Implemented overvoltage and overcurrent protection systems for safe charger operation.</li>
+        <li>Developed embedded firmware for PWM generation, sensing, closed-loop control, and fault handling on TI F28379D.</li>
+        <li>Performed converter modelling, controller tuning, and experimental validation using MATLAB and hardware measurements.</li>
+      </ul>
+      <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">Digital Substation Merging Unit</span>
+      <span class="proj-meta">PGCIL · IISc Bangalore &nbsp;|&nbsp; Team Lead</span>
+    </button>
+    <div class="project-body">
+      <p class="tagline">IEC-61850-9-2 compliant merging unit for real-time digitised current and voltage acquisition at substation bay level.</p>
+      <ul>
+        <li>Designed voltage and current sensing hardware using 16-bit ADCs; implemented FPGA-based PS-PL synchronisation on Zynq-7020 for deterministic real-time acquisition.</li>
+        <li>Developed a distributed timing architecture using BeagleBone Black (Embedded Linux) and FPGA with IEEE-1588 PTP and external hardware timestamping — achieving sub-nanosecond synchronisation accuracy.</li>
+        <li>Implemented high-speed Ethernet communication using lwIP for 4 kHz real-time IEC-61850-9-2 Sampled Value streaming.</li>
+        <li>Built a DMA-based acquisition, validation, and packetisation pipeline; verified frames and timing using Wireshark and MATLAB.</li>
+        <li>Implemented AES-128 hardware encryption on Zynq-7020 FPGA for securing IEC-61850-9-2 Sampled Value frames over Ethernet.</li>
+        <li>Led a multi-member team on FPGA synchronisation, hardware bring-up, and real-time Ethernet validation.</li>
+      </ul>
+      <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">1600 W Single-Phase Solar Micro-Inverter</span>
+      <span class="proj-meta">Arka Energy Pvt. Ltd. · Bangalore</span>
+    </button>
+    <div class="project-body">
+      <p class="tagline">Grid-connected micro-inverter for rooftop PV, developed as part of M.Tech thesis. R&amp;D Engineer.</p>
+      <ul>
+        <li>Designed and developed a 1600 W single-phase solar micro-inverter including the DC-DC conversion stage and grid-connected inverter, validated against a Digital Twin developed for the same.</li>
+        <li>Designed and implemented an interleaved 400 W quasi-resonant flyback converter with MPPT control for high-efficiency PV power extraction.</li>
+        <li>Developed grid synchronisation, current control, and inverter integration algorithms for single-phase grid-tied power injection.</li>
+        <li>Performed MATLAB/Simulink modelling, switching-loss analysis, and closed-loop controller design using root-locus and frequency-response methods.</li>
+        <li>Implemented digital control, modulation, and real-time firmware on TI F28379D for converter and inverter operation.</li>
+        <li>Conducted magnetic design and transformer optimisation using Ansys Maxwell, improving efficiency and power density.</li>
+        <li>Designed and developed hardware and analog control circuitry for a 30 W auxiliary power supply using a multi-winding flyback converter.</li>
+      </ul>
+      <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">Control Card — Sensing, Protection &amp; Signal Conditioning</span>
+      <span class="proj-meta">SPEL · IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      <p class="tagline">Centralised control card hosting TI F28379D DSP with all sensing, protection, and drive circuitry on a single board.</p>
+      <ul>
+        <li>Designed a custom control card hosting the TI F28379D DSP with analog and digital protection circuitry, auxiliary supply, gate-drive circuits, and power supply rails.</li>
+        <li>Integrated voltage and current sensing, isolated ADC front-ends, PWM output drivers, and protection logic as a common control platform reusable across multiple converter projects.</li>
+        <li>Implemented overvoltage, overcurrent, and fault-handling circuitry for safe operation in high-power environments.</li>
+      </ul>
+      <div class="img-placeholder">[ Hardware photo — upload coming soon ]</div>
+    </div>
+  </div>
+
+  <!-- ── PERSONAL PROJECTS ── -->
+  <p class="section-title">Personal Projects</p>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">Model-Predictive Control of Buck Converter</span>
+      <span class="proj-meta">IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      MPC-based digital controller design and implementation for a DC-DC buck converter.
+      Explored finite control set MPC for fast transient response and constraint handling
+      compared to classical PI-based approaches.
+      <div class="img-placeholder">[ Coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">Mathematical &amp; Magnetic Modelling of Electric Motor Drives</span>
+      <span class="proj-meta">IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      Analytical modelling of electric motor drives including dq-frame transformation,
+      equivalent circuit derivation, and magnetic circuit analysis. Used as a foundation
+      for control design and simulation validation.
+      <div class="img-placeholder">[ Coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">PMSM Motor HIL Control</span>
+      <span class="proj-meta">IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      Hardware-in-the-loop control of a Permanent Magnet Synchronous Motor.
+      Real-time plant emulation with embedded controller in the loop — used for
+      validating FOC algorithms before deployment on physical hardware.
+      <div class="img-placeholder">[ Coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">Digital Twin Validation — DAB &amp; SRC Converters</span>
+      <span class="proj-meta">IISc Bangalore</span>
+    </button>
+    <div class="project-body">
+      Developed and validated digital twin models for Dual Active Bridge (DAB) and
+      Series Resonant Converter (SRC) topologies. Models used for controller design
+      and hardware pre-validation, reducing bench iteration cycles.
+      <div class="img-placeholder">[ Coming soon ]</div>
+    </div>
+  </div>
+
+  <div class="project">
+    <button class="project-toggle" onclick="toggle(this)">
+      <span class="proj-title">High-Frequency Trading Platform on FPGA</span>
+      <span class="proj-meta">NIT Srinagar</span>
+    </button>
+    <div class="project-body">
+      FPGA-based architecture for ultra-low-latency order execution. Explored
+      hardware acceleration of trading logic in VHDL, focusing on deterministic
+      timing and pipeline design for sub-microsecond response.
+      <div class="img-placeholder">[ Coming soon ]</div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="mailto:haseeb.mirie@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/haseebmir" target="_blank">LinkedIn</a>
+    <a href="https://github.com/haseebmir" target="_blank">GitHub</a>
+  </footer>
+
+  <script>
+    function toggle(btn) {
+      btn.nextElementSibling.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
