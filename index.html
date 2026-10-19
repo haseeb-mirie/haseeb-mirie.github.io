@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#252629">
   <title>Haseeb Mir — Projects</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <a class="skip-link" href="#projects">Skip to projects</a>
@@ -15,199 +15,426 @@
     <header>
       <h1>Haseeb Mir</h1>
     </header>
-    <main id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <details class="project" id="sic-charger">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">3.3 kW SiC on-board charger</span>
-            <span class="project-context"><span>ChargeWorks · IISc</span><span class="date">2024 — 2026</span></span>
-            <span class="project-preview">Designed and validated a 3.3 kW charger with Totem-Pole PFC, LLC conversion, and embedded control.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Led end-to-end development of a SiC AC–DC charger with bridgeless Totem-Pole PFC and LLC resonant DC–DC stages, demonstrating operation up to 3.3 kW.</li>
-            <li>Designed power-stage schematics, PCB layouts, gate-drive circuits, voltage and current sensing, and analog/digital protection.</li>
-            <li>Implemented digital closed-loop control on TI C2000 DSPs, including PWM generation, ADC acquisition, PFC and LLC regulation, fault detection, and system state management.</li>
-            <li>Performed frequency-response analysis, compensator design, stability assessment, and transient-response optimization in MATLAB/Simulink.</li>
-            <li>Integrated CAN communication for BMS interfacing, CC/CV charge-profile negotiation, and status reporting.</li>
-            <li>Carried out switching-loss characterization, thermal analysis, hardware bring-up, and experimental validation.</li>
+    <main class="content-layout">
+      <div class="project-column">
+        <section id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <details class="project" id="sic-charger">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">3.3 kW SiC on-board charger</span>
+                <span class="project-context"><span>ChargeWorks · IISc</span><span class="date">2024 — 2026</span></span>
+                <span class="project-preview">Designed and validated a 3.3 kW charger with Totem-Pole PFC, LLC conversion, and embedded control.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Led end-to-end development of a SiC AC–DC charger with bridgeless Totem-Pole PFC and LLC resonant DC–DC stages, demonstrating operation up to 3.3 kW.</li>
+                <li>Designed power-stage schematics, PCB layouts, gate-drive circuits, voltage and current sensing, and analog/digital protection.</li>
+                <li>Implemented digital closed-loop control on TI C2000 DSPs, including PWM generation, ADC acquisition, PFC and LLC regulation, fault detection, and system state management.</li>
+                <li>Performed frequency-response analysis, compensator design, stability assessment, and transient-response optimization in MATLAB/Simulink.</li>
+                <li>Integrated CAN communication for BMS interfacing, CC/CV charge-profile negotiation, and status reporting.</li>
+                <li>Carried out switching-loss characterization, thermal analysis, hardware bring-up, and experimental validation.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="gan-charger">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">2.2 kW GaN AC–DC charger</span>
+                <span class="project-context"><span>ChargeWorks</span></span>
+                <span class="project-preview">Developed a GaN charger, evaluated DAB and LLC topologies, and optimized the resonant tank and magnetics.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Developed a GaN charger combining Totem-Pole PFC with an optimized LLC converter and EPC GaN synchronous rectification on the secondary side.</li>
+                <li>Compared DAB and LLC architectures for efficiency, current stress, operating characteristics, and implementation tradeoffs, selecting LLC for the charger.</li>
+                <li>Developed Triple Phase Shift modulation for DAB and formulated an RMS-current minimization problem to reduce conduction losses and current stress.</li>
+                <li>Optimized resonant and magnetizing inductance, tank capacitance, transformer design, switching-frequency range, and device stress.</li>
+                <li>Designed schematics, PCB layouts, magnetic components, GaN gate drives, and digital control strategies, supported by simulation and hardware testing.</li>
+                <li>Measured best-case stage efficiencies of approximately 97.3% for the bridgeless Totem-Pole PFC stage and 98.8% for the LLC stage.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="control-hardware">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Digital control hardware &amp; auxiliary power</span>
+                <span class="project-context"><span>ChargeWorks</span></span>
+                <span class="project-preview">Designed an F28379D control card, embedded firmware, and a 25 W multi-winding flyback supply.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Designed and validated a custom TI TMS320F28379D control card, from schematic capture through multilayer PCB layout.</li>
+                <li>Integrated ADC signal conditioning, sensor interfaces, protection circuitry, gate-drive control interfaces, auxiliary supplies, and power rails.</li>
+                <li>Built modular embedded C firmware for PWM, ADC acquisition, sensor calibration, closed-loop regulation, state machines, fault handling, and CAN communication.</li>
+                <li>Designed and experimentally validated high-frequency inductors and transformers for converter prototypes.</li>
+                <li>Developed a 25 W multi-winding flyback supply with transformer design, RCD clamping, and analog-IC-based closed-loop regulation.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="merging-unit">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Digital substation merging unit</span>
+                <span class="project-context"><span>IISc · PGCIL-funded</span><span class="date">2024 — 2026</span></span>
+                <span class="project-preview">Built FPGA-based voltage and current acquisition, synchronized timing, and IEC 61850 Ethernet streaming.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Led hardware and embedded systems development of a PGCIL-funded merging unit for the digital substation project at Navsari, Gujarat.</li>
+                <li>Designed and validated 16-bit ADC voltage and current sensing hardware, analog signal conditioning, schematics, PCBs, and precision acquisition interfaces.</li>
+                <li>Built deterministic acquisition and processing on Xilinx Zynq-7020, integrating programmable logic, processor interfaces, PS–PL synchronization, and DMA transfers.</li>
+                <li>Implemented IEEE 1588 PTP synchronization using embedded Linux, hardware timestamping, and FPGA-based timing.</li>
+                <li>Developed IEC 61850-9-2 Sampled Values streaming at 4 kHz with lwIP Ethernet and real-time packetization.</li>
+                <li>Implemented AES-128 FPGA hardware encryption and validated acquisition, timing, and network behavior using Wireshark, MATLAB, and hardware debugging.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="solar-microinverter">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">1.6 kW solar microinverter</span>
+                <span class="project-context"><span>Arka Energy</span><span class="date">2022</span></span>
+                <span class="project-preview">Developed MPPT-controlled DC–DC conversion and grid-connected inversion for a 1.6 kW solar system.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Developed a 1.6 kW microinverter integrating MPPT-controlled DC–DC conversion with grid-connected DC–AC conversion.</li>
+                <li>Designed and validated flyback converter hardware, high-frequency transformers, magnetic components, and power-stage circuitry, including an interleaved 400 W quasi-resonant flyback stage.</li>
+                <li>Developed MPPT, grid synchronization, current control, and space-vector modulation for inverter operation.</li>
+                <li>Performed MATLAB/Simulink modelling, switching-loss analysis, controller design, and digital firmware implementation on TI F28379D.</li>
+                <li>Used Ansys Maxwell for magnetic design and transformer optimization, alongside hardware and digital-twin validation.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="buck-mpc">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Model-predictive control of a 500 W buck converter</span>
+                <span class="project-context"><span>IISc</span><span class="date">2024</span></span>
+                <span class="project-preview">Implemented and tested model-predictive control on a 500 W buck converter.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <p>Developed and experimentally validated MPC for a 500 W buck converter. Modelled the plant and controller in MATLAB/Simulink, evaluated transient response and constraint handling against classical PI control, and verified simulation results through laboratory testing.</p>
+            </div>
+          </details>
+
+          <details class="project" id="boost-pfc-mpc">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Model-predictive control of Boost PFC</span>
+                <span class="project-context"><span>IISc research</span></span>
+                <span class="project-preview">Modelled Boost PFC converters and implemented and validated MPC on TI C2000 hardware.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <p>Designed and implemented MPC for Boost PFC converters, including mathematical modelling, MATLAB/Simulink controller evaluation, and real-time implementation on TI C2000 DSPs. Validated controller behavior on hardware and compared experimental results with simulation.</p>
+            </div>
+          </details>
+
+          <details class="project" id="reluctance-motor">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Reluctance motor modelling &amp; nonlinear control</span>
+                <span class="project-context"><span>IISc</span><span class="date">2024</span></span>
+                <span class="project-preview">Built a nonlinear motor model from FEMM magnetic data and validated closed-loop simulations against published measurements.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul>
+                <li>Developed a FEM-based electromagnetic model in FEMM to capture nonlinear magnetic characteristics and motor operating behavior.</li>
+                <li>Used FEMM-derived magnetic data to build a nonlinear dynamic model and closed-loop control with a unidirectional H-bridge converter.</li>
+                <li>Validated simulations against experimental results published in a Transactions journal paper, with approximately 3–5% deviation from reported hardware measurements.</li>
+                <li>Evaluated electromagnetic and dynamic performance through coupled magnetic modelling, power-converter simulation, and nonlinear control.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project" id="pmsm-hil">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">PMSM hardware-in-the-loop control</span>
+                <span class="project-context"><span>IISc</span><span class="date">2025</span></span>
+                <span class="project-preview">Connected real-time motor emulation to an embedded field-oriented controller for hardware-in-the-loop validation.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <p>Developed hardware-in-the-loop control of a permanent-magnet synchronous motor, connecting real-time plant emulation with an embedded FOC controller. Validated control behavior before physical hardware deployment.</p>
+            </div>
+          </details>
+
+          <details class="project" id="digital-twins">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Digital twins for DAB &amp; SRC converters</span>
+                <span class="project-context"><span>IISc</span><span class="date">2025</span></span>
+                <span class="project-preview">Developed DAB and series resonant converter models for controller design and hardware pre-validation.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <p>Developed digital-twin models for Dual Active Bridge and Series Resonant Converter topologies, supporting controller design and validation ahead of hardware testing.</p>
+            </div>
+          </details>
+
+          <details class="project" id="fpga-trading">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">High-frequency trading on FPGA</span>
+                <span class="project-context"><span>NIT Srinagar</span><span class="date">2021 — 2022</span></span>
+                <span class="project-preview">Built a deterministic order-execution pipeline in VHDL for sub-microsecond response.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <p>Built an FPGA-based order-execution platform in VHDL, using a deterministic pipeline for sub-microsecond response.</p>
+            </div>
+          </details>
+        </section>
+
+        <section class="simulation-section" id="simulations" aria-labelledby="simulations-title">
+          <h2 id="simulations-title">MATLAB / Simulink</h2>
+          <p class="section-note">Simulation models and scripts published on <a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=profileid%3A29488695" target="_blank" rel="noopener noreferrer">File Exchange</a>.</p>
+          <details class="project simulation" id="matlab-buck">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Buck converter models &amp; control</span>
+                <span class="project-preview">Ideal and parasitic CCM/DCM models, LQR design, and observer-based sensorless control.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/181543-lqr-control-for-buck-converter" target="_blank" rel="noopener noreferrer">LQR controller design</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/181542-sensorless-control-of-a-buck-converter" target="_blank" rel="noopener noreferrer">Full-state observer control</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131149-mathematical-model-of-buck-converter-dcm-ccm-with-parasitics" target="_blank" rel="noopener noreferrer">CCM/DCM models with parasitics</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-boost">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Boost converter models &amp; control</span>
+                <span class="project-preview">Ideal and parasitic models, small-signal analysis, and closed-loop controller design.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/181541-closed-loop-control-design-for-boost-converter" target="_blank" rel="noopener noreferrer">Closed-loop design and live script</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131199-boost-converter-small-signal-model-with-controller-design" target="_blank" rel="noopener noreferrer">Small-signal model and controller</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131154-mathematical-model-of-boost-converter-ideal-parasitic" target="_blank" rel="noopener noreferrer">Ideal and parasitic models</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-flyback">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Flyback converter modelling</span>
+                <span class="project-preview">State-space, averaged, small-signal, and fourth-order models incorporating parasitic effects.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131159-mathematical-and-large-signal-model-state-space-of-flyback" target="_blank" rel="noopener noreferrer">Ideal and large-signal models</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131164-averages-large-and-small-signal-model-of-flyback-converter" target="_blank" rel="noopener noreferrer">Averaged and small-signal models</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131169-mathematical-and-state-space-model-of-flyback-converter" target="_blank" rel="noopener noreferrer">State-space model with parasitics</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131179-4th-order-mathematical-model-of-flyback-converter" target="_blank" rel="noopener noreferrer">Fourth-order model with leakage inductance and switch capacitance</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-multi-output-flyback">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Multi-output flyback in DCM</span>
+                <span class="project-preview">Modelled a multi-winding flyback transformer using physical electrical Simscape elements.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126065-multi-output-flyback-transformer-in-dcm-mode" target="_blank" rel="noopener noreferrer">Multi-output flyback simulation</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-solar">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Solar PV modelling &amp; feed-forward control</span>
+                <span class="project-preview">Mathematical PV-array modelling and feed-forward control for solar power extraction.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131174-mathematical-model-of-a-solar-pv-array" target="_blank" rel="noopener noreferrer">Solar PV-array model</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131204-solar-power-extraction-using-feed-forward-control-boost-conv" target="_blank" rel="noopener noreferrer">Feed-forward control for PV power extraction</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-grid-inverters">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Three-phase grid-tied microinverters</span>
+                <span class="project-preview">Solar-inverter simulations using SPWM, SVPWM, and 60-degree bus-clamped SVPWM.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131184-three-phase-grid-tied-micro-inverter-using-spwm-technique" target="_blank" rel="noopener noreferrer">SPWM inverter with averaged models</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131189-three-phase-grid-tied-micro-inverter-using-svpwm-technique" target="_blank" rel="noopener noreferrer">Conventional SVPWM inverter</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/131194-three-phase-grid-tied-micro-inverter-with-60-degree-bcsvpwm" target="_blank" rel="noopener noreferrer">60-degree bus-clamped SVPWM inverter</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-pwm">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">PWM &amp; bus-clamping methods</span>
+                <span class="project-preview">Space-vector and common-mode implementations of 30-degree split-clamp and 60-degree bus-clamp PWM.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126125-space-vector-pwm-technique-general" target="_blank" rel="noopener noreferrer">General space-vector PWM</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126115-space-vector-30-degree-split-bus-clamp-technique" target="_blank" rel="noopener noreferrer">Space-vector 30-degree split clamp</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126120-space-vector-60-degree-bus-clamp-technique" target="_blank" rel="noopener noreferrer">Space-vector 60-degree bus clamp</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126190-30-degree-split-clamp-pwm-technique-m-file" target="_blank" rel="noopener noreferrer">Common-mode 30-degree split clamp</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126180-60-degree-bus-clamp-leading-using-common-mode-signal" target="_blank" rel="noopener noreferrer">Common-mode 60-degree leading clamp</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126185-60-degree-bus-clamp-lagging-using-common-mode-signal" target="_blank" rel="noopener noreferrer">Common-mode 60-degree lagging clamp</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-dstatcom">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">D-STATCOM power-quality compensation</span>
+                <span class="project-preview">Simulated harmonic compensation, unity power factor, load balancing, neutral-current compensation, and voltage regulation.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/181544-repository-of-d-statcom-implementation" target="_blank" rel="noopener noreferrer">D-STATCOM model repository</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126070-d-statcom-harmonic-compensation-and-unity-pf-operation" target="_blank" rel="noopener noreferrer">Unit template: harmonics and unity power factor</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126075-d-statcom-load-balancing-and-neutral-current-compensation" target="_blank" rel="noopener noreferrer">Unit template: load balancing and neutral current</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126080-dstatcom-zero-voltage-regulation-unit-template-algortihm" target="_blank" rel="noopener noreferrer">Unit template: zero-voltage regulation</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126100-upf-and-harmonic-compensation-dtatcom-using-srf-theory" target="_blank" rel="noopener noreferrer">SRF: harmonics and unity power factor</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126105-d-statcom-load-balancing-and-neutral-current-comp-srf-theory" target="_blank" rel="noopener noreferrer">SRF: load balancing and neutral current</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126110-zvr-dstatcom-using-srf-theory" target="_blank" rel="noopener noreferrer">SRF: zero-voltage regulation</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126090-upf-and-harmonic-compensation-dstatcom-using-irpt" target="_blank" rel="noopener noreferrer">IRPT: harmonics and unity power factor</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126085-dstatcom-irpt-theory-neutral-current-and-load-unbalance-comp" target="_blank" rel="noopener noreferrer">IRPT: load balancing and neutral current</a></li>
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/126095-zero-voltage-regulation-dstatcom-using-irpt" target="_blank" rel="noopener noreferrer">IRPT: zero-voltage regulation</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project simulation" id="matlab-sequence-components">
+            <summary>
+              <span class="project-heading">
+                <span class="project-title">Three-phase sequence components</span>
+                <span class="project-preview">Extracted positive, negative, and zero-sequence components from balanced and unbalanced supplies.</span>
+              </span>
+              <span class="project-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="project-body">
+              <ul class="simulation-links">
+                <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/174310-extracting-positive-negative-and-zero-sequence-components" target="_blank" rel="noopener noreferrer">Sequence-component extraction model</a></li>
+              </ul>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <aside class="background" aria-label="Experience, education, and profiles">
+        <section aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+          <div class="background-item">
+            <h3>Senior System Engineer</h3>
+            <p>ChargeWorks · Incubated at IISc</p>
+            <p class="date">Feb 2026 — present</p>
+          </div>
+          <div class="background-item">
+            <h3>Senior Research Associate</h3>
+            <p>IISc · Sustainable Power Electronics Lab</p>
+            <p class="date">Mar 2023 — Feb 2026</p>
+          </div>
+          <div class="background-item">
+            <h3>Assistant Manager · Electrical Projects &amp; Cables</h3>
+            <p>KEC International</p>
+            <p class="date">Jul 2022 — Feb 2023</p>
+          </div>
+          <div class="background-item">
+            <h3>R&amp;D Engineer · Power Electronics</h3>
+            <p>Arka Energy, Bengaluru</p>
+            <p class="date">Jan 2022 — Jul 2022</p>
+          </div>
+          <div class="background-item">
+            <h3>Junior Engineer</h3>
+            <p>J&amp;K Government Contractors</p>
+            <p class="date">Jul 2017 — Aug 2019</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <div class="background-item">
+            <h3>M.Tech · Power Electronics &amp; Electric Drives</h3>
+            <p>NIT Srinagar</p>
+            <p class="date">2021 — 2023</p>
+          </div>
+          <div class="background-item">
+            <h3>B.Tech · Electrical Engineering</h3>
+            <p>IUST, Awantipora, J&amp;K</p>
+            <p class="date">2012 — 2016</p>
+          </div>
+          <div class="background-item">
+            <h3>Diploma · Information Technology</h3>
+            <p>Intech Technologies, Srinagar</p>
+            <p class="date">2016 — 2017</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="profiles-title">
+          <h2 id="profiles-title">Profiles</h2>
+          <ul class="profile-links">
+            <li><a href="https://github.com/haseeb-mirie" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/haseeb-mir-1930b2151/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://in.mathworks.com/matlabcentral/profile/authors/29488695" target="_blank" rel="noopener noreferrer">MATLAB Central</a></li>
+            <li><a href="https://www.mathworks.com/matlabcentral/fileexchange/?term=profileid%3A29488695" target="_blank" rel="noopener noreferrer">MATLAB File Exchange</a></li>
           </ul>
-        </div>
-      </details>
-
-      <details class="project" id="gan-charger">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">2.2 kW GaN AC–DC charger</span>
-            <span class="project-context"><span>ChargeWorks</span></span>
-            <span class="project-preview">Developed a GaN charger, evaluated DAB and LLC topologies, and optimized the resonant tank and magnetics.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Developed a GaN charger combining Totem-Pole PFC with an optimized LLC converter and EPC GaN synchronous rectification on the secondary side.</li>
-            <li>Compared DAB and LLC architectures for efficiency, current stress, operating characteristics, and implementation tradeoffs, selecting LLC for the charger.</li>
-            <li>Developed Triple Phase Shift modulation for DAB and formulated an RMS-current minimization problem to reduce conduction losses and current stress.</li>
-            <li>Optimized resonant and magnetizing inductance, tank capacitance, transformer design, switching-frequency range, and device stress.</li>
-            <li>Designed schematics, PCB layouts, magnetic components, GaN gate drives, and digital control strategies, supported by simulation and hardware testing.</li>
-            <li>Measured best-case stage efficiencies of approximately 97.3% for the bridgeless Totem-Pole PFC stage and 98.8% for the LLC stage.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="project" id="control-hardware">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Digital control hardware &amp; auxiliary power</span>
-            <span class="project-context"><span>ChargeWorks</span></span>
-            <span class="project-preview">Designed an F28379D control card, embedded firmware, and a 25 W multi-winding flyback supply.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Designed and validated a custom TI TMS320F28379D control card, from schematic capture through multilayer PCB layout.</li>
-            <li>Integrated ADC signal conditioning, sensor interfaces, protection circuitry, gate-drive control interfaces, auxiliary supplies, and power rails.</li>
-            <li>Built modular embedded C firmware for PWM, ADC acquisition, sensor calibration, closed-loop regulation, state machines, fault handling, and CAN communication.</li>
-            <li>Designed and experimentally validated high-frequency inductors and transformers for converter prototypes.</li>
-            <li>Developed a 25 W multi-winding flyback supply with transformer design, RCD clamping, and analog-IC-based closed-loop regulation.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="project" id="merging-unit">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Digital substation merging unit</span>
-            <span class="project-context"><span>IISc · PGCIL-funded</span><span class="date">2024 — 2026</span></span>
-            <span class="project-preview">Built FPGA-based voltage and current acquisition, synchronized timing, and IEC 61850 Ethernet streaming.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Led hardware and embedded systems development of a PGCIL-funded merging unit for the digital substation project at Navsari, Gujarat.</li>
-            <li>Designed and validated 16-bit ADC voltage and current sensing hardware, analog signal conditioning, schematics, PCBs, and precision acquisition interfaces.</li>
-            <li>Built deterministic acquisition and processing on Xilinx Zynq-7020, integrating programmable logic, processor interfaces, PS–PL synchronization, and DMA transfers.</li>
-            <li>Implemented IEEE 1588 PTP synchronization using embedded Linux, hardware timestamping, and FPGA-based timing.</li>
-            <li>Developed IEC 61850-9-2 Sampled Values streaming at 4 kHz with lwIP Ethernet and real-time packetization.</li>
-            <li>Implemented AES-128 FPGA hardware encryption and validated acquisition, timing, and network behavior using Wireshark, MATLAB, and hardware debugging.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="project" id="solar-microinverter">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">1.6 kW solar microinverter</span>
-            <span class="project-context"><span>Arka Energy</span><span class="date">2022</span></span>
-            <span class="project-preview">Developed MPPT-controlled DC–DC conversion and grid-connected inversion for a 1.6 kW solar system.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Developed a 1.6 kW microinverter integrating MPPT-controlled DC–DC conversion with grid-connected DC–AC conversion.</li>
-            <li>Designed and validated flyback converter hardware, high-frequency transformers, magnetic components, and power-stage circuitry, including an interleaved 400 W quasi-resonant flyback stage.</li>
-            <li>Developed MPPT, grid synchronization, current control, and space-vector modulation for inverter operation.</li>
-            <li>Performed MATLAB/Simulink modelling, switching-loss analysis, controller design, and digital firmware implementation on TI F28379D.</li>
-            <li>Used Ansys Maxwell for magnetic design and transformer optimization, alongside hardware and digital-twin validation.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="project" id="buck-mpc">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Model-predictive control of a 500 W buck converter</span>
-            <span class="project-context"><span>IISc</span><span class="date">2024</span></span>
-            <span class="project-preview">Implemented and tested model-predictive control on a 500 W buck converter.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <p>Developed and experimentally validated MPC for a 500 W buck converter. Modelled the plant and controller in MATLAB/Simulink, evaluated transient response and constraint handling against classical PI control, and verified simulation results through laboratory testing.</p>
-        </div>
-      </details>
-
-      <details class="project" id="boost-pfc-mpc">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Model-predictive control of Boost PFC</span>
-            <span class="project-context"><span>IISc research</span></span>
-            <span class="project-preview">Modelled Boost PFC converters and implemented and validated MPC on TI C2000 hardware.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <p>Designed and implemented MPC for Boost PFC converters, including mathematical modelling, MATLAB/Simulink controller evaluation, and real-time implementation on TI C2000 DSPs. Validated controller behavior on hardware and compared experimental results with simulation.</p>
-        </div>
-      </details>
-
-      <details class="project" id="reluctance-motor">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Reluctance motor modelling &amp; nonlinear control</span>
-            <span class="project-context"><span>IISc</span><span class="date">2024</span></span>
-            <span class="project-preview">Built a nonlinear motor model from FEMM magnetic data and validated closed-loop simulations against published measurements.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <ul>
-            <li>Developed a FEM-based electromagnetic model in FEMM to capture nonlinear magnetic characteristics and motor operating behavior.</li>
-            <li>Used FEMM-derived magnetic data to build a nonlinear dynamic model and closed-loop control with a unidirectional H-bridge converter.</li>
-            <li>Validated simulations against experimental results published in a Transactions journal paper, with approximately 3–5% deviation from reported hardware measurements.</li>
-            <li>Evaluated electromagnetic and dynamic performance through coupled magnetic modelling, power-converter simulation, and nonlinear control.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="project" id="pmsm-hil">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">PMSM hardware-in-the-loop control</span>
-            <span class="project-context"><span>IISc</span><span class="date">2025</span></span>
-            <span class="project-preview">Connected real-time motor emulation to an embedded field-oriented controller for hardware-in-the-loop validation.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <p>Developed hardware-in-the-loop control of a permanent-magnet synchronous motor, connecting real-time plant emulation with an embedded FOC controller. Validated control behavior before physical hardware deployment.</p>
-        </div>
-      </details>
-
-      <details class="project" id="digital-twins">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">Digital twins for DAB &amp; SRC converters</span>
-            <span class="project-context"><span>IISc</span><span class="date">2025</span></span>
-            <span class="project-preview">Developed DAB and series resonant converter models for controller design and hardware pre-validation.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <p>Developed digital-twin models for Dual Active Bridge and Series Resonant Converter topologies, supporting controller design and validation ahead of hardware testing.</p>
-        </div>
-      </details>
-
-      <details class="project" id="fpga-trading">
-        <summary>
-          <span class="project-heading">
-            <span class="project-title">High-frequency trading on FPGA</span>
-            <span class="project-context"><span>NIT Srinagar</span><span class="date">2021 — 2022</span></span>
-            <span class="project-preview">Built a deterministic order-execution pipeline in VHDL for sub-microsecond response.</span>
-          </span>
-          <span class="project-icon" aria-hidden="true"></span>
-        </summary>
-        <div class="project-body">
-          <p>Built an FPGA-based order-execution platform in VHDL, using a deterministic pipeline for sub-microsecond response.</p>
-        </div>
-      </details>
+        </section>
+      </aside>
     </main>
   </div>
 </body>
